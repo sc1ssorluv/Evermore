@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Peluches y Bolos Navideños</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500;1,700&family=Jost:wght@400;500;600&display=swap">
+<style>
+:root{
+  --green:#1e3a2a; --green2:#2a4d38; --cocoa:#792c18; --gold:#d4ad62; --gold-d:#8a6a2a; --red:#a82a24;
+  --icing:#dcc099; --cream:#f6ede0;
+  --bg:var(--cream); --text:#3b1b0e; --card:#fffaf1; --line:#dfc9a3; --muted:#6b4c33; --head:var(--green);
+  --display:"Cormorant Garamond","Georgia",serif; --body:"Jost","Helvetica Neue",Arial,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#17261d;--text:#f1e4c8;--card:#1e3a2a;--line:#3a5a45;--muted:#cdbb96;--head:var(--gold);}}
+:root[data-theme="dark"]{--bg:#17261d;--text:#f1e4c8;--card:#1e3a2a;--line:#3a5a45;--muted:#cdbb96;--head:var(--gold);}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);line-height:1.6;font-size:16px}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.05;font-weight:700}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+svg.i{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+
+/* nav + hero */
+.hero{position:relative;overflow:hidden;background:var(--green);color:var(--cream);padding-bottom:96px}
+.hero::before{content:"";position:absolute;inset:14px;border:1px solid var(--gold);opacity:.55;pointer-events:none}
+.hero::after{content:"";position:absolute;inset:20px;border:1px solid var(--gold);opacity:.25;pointer-events:none}
+nav{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:center;padding:34px 38px 0}
+.logo{font-family:var(--display);font-style:italic;font-size:2.2rem;font-weight:700;color:var(--gold)}
+.cartlink{color:var(--cream);text-decoration:none;border:1px solid var(--gold);padding:8px 20px;font-size:.92rem;letter-spacing:.04em}
+.cartlink:hover{background:var(--gold);color:var(--green)}
+.cartlink:focus-visible,.btn:focus-visible,.add:focus-visible,.qty button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.heroin{position:relative;z-index:2;padding:36px 38px 0;max-width:580px}
+.hero h1{font-size:clamp(3rem,9vw,5.6rem);font-style:italic;color:var(--cream)}
+.hero p{margin:20px 0 30px;max-width:30em;color:#e6dcc4;font-size:1.05rem}
+.btn{display:inline-block;background:var(--gold);color:var(--green);font-weight:600;border:0;padding:14px 34px;font-size:.95rem;letter-spacing:.06em;text-decoration:none;cursor:pointer;font-family:var(--body)}
+.btn:hover{background:#e3c07e}
+.ribbon{position:absolute;z-index:1;right:-4%;bottom:24px;width:64%;height:68px;background:linear-gradient(var(--red),#8f211c);transform:rotate(-7deg);display:flex;align-items:center;justify-content:center;gap:18px;color:#f9e9dc;font-family:var(--display);font-style:italic;font-weight:700;font-size:2.4rem;letter-spacing:.03em;clip-path:polygon(0 0,100% 0,97% 50%,100% 100%,0 100%,3% 50%)}
+.ribbon::before,.ribbon::after{content:"";position:absolute;left:5%;right:5%;height:1px;background:var(--gold);opacity:.75}
+.ribbon::before{top:9px}.ribbon::after{bottom:9px}
+.ribbon svg{width:22px;height:22px;flex:none;color:var(--gold);fill:currentColor;stroke:currentColor;stroke-width:3}
+.flakes{position:absolute;inset:0;pointer-events:none;z-index:1}
+.flakes svg{position:absolute;top:-34px;fill:none;stroke:var(--cream);stroke-width:3.2;stroke-linecap:round;opacity:.6;animation:fall linear infinite}
+@keyframes fall{to{transform:translateY(600px) rotate(120deg)}}
+.flakes svg.ck{opacity:.95}
+
+/* sections */
+section{padding:64px 0 0}
+.sec-head{margin-bottom:30px;text-align:center}
+.sec-head h2{font-size:clamp(2.2rem,6vw,3.2rem);font-style:italic;color:var(--head)}
+.sec-head .orn{display:flex;align-items:center;justify-content:center;gap:14px;color:var(--gold-d);margin:10px 0}
+.sec-head .orn::before,.sec-head .orn::after{content:"";height:1px;width:70px;background:currentColor;opacity:.6}
+.sec-head .orn svg{width:20px;height:20px}
+.sec-head p{margin:0 auto;color:var(--muted);max-width:34em}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px}
+.card{background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column}
+.pic{aspect-ratio:1/1;display:grid;place-items:center;background:var(--green);color:var(--gold);position:relative;margin:8px 8px 0}
+.pic::after{content:"";position:absolute;inset:7px;border:1px solid var(--gold);opacity:.4}
+.pic svg{width:70px;height:70px}
+.card:nth-child(even) .pic{background:var(--cocoa)}
+.card .in{padding:18px 20px 22px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h3{font-size:1.65rem;color:var(--head)}
+.card p{margin:0;color:var(--muted);font-size:.93rem;flex:1}
+.tag{align-self:flex-start;font-size:.75rem;letter-spacing:.06em;border:1px solid var(--red);color:var(--red);padding:1px 10px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .tag{color:#f0a49e;border-color:#f0a49e}}
+.row{display:flex;align-items:center;justify-content:space-between;margin-top:14px}
+.price{font-family:var(--display);font-weight:700;font-size:1.6rem}
+.add{background:transparent;color:var(--head);border:1px solid var(--head);padding:8px 20px;font-family:var(--body);font-size:.9rem;letter-spacing:.04em;cursor:pointer}
+.add:hover{background:var(--head);color:var(--bg)}
+
+/* bolos band */
+.band{background:var(--green);color:var(--cream);margin-top:70px;padding:64px 0 70px;position:relative}
+.band .sec-head h2{color:var(--gold)}
+.band .sec-head p{color:#d9ceb2}
+.band .sec-head .orn{color:var(--gold)}
+.band .card{background:var(--green2);border-color:#4b7258}
+.band .card h3{color:var(--cream)}
+.band .card p{color:#d3c9ae}
+.band .price{color:var(--gold)}
+.band .add{color:var(--gold);border-color:var(--gold)}
+.band .add:hover{background:var(--gold);color:var(--green)}
+.band .pic{background:var(--green)}
+.band .card:nth-child(even) .pic{background:var(--cocoa)}
+.band .card .tag{background:var(--gold);color:var(--green);border-color:var(--gold);font-weight:500;font-size:.8rem;padding:2px 12px}
+
+/* cart */
+.cart{background:var(--card);border:1px solid var(--line);outline:1px solid var(--line);outline-offset:6px;padding:30px;margin:70px 6px 80px}
+.cart h2{font-size:2.3rem;font-style:italic;color:var(--head);text-align:center;margin-bottom:12px}
+.empty{color:var(--muted);text-align:center;margin:10px 0}
+.line{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}
+.qty{display:flex;align-items:center;gap:10px}
+.qty button{width:28px;height:28px;border:1px solid var(--gold-d);background:transparent;color:var(--text);cursor:pointer}
+.total{display:flex;justify-content:space-between;font-family:var(--display);font-weight:700;font-size:1.7rem;padding:16px 0}
+.fields{display:grid;gap:10px;margin-bottom:16px}
+.fields input{font:inherit;padding:12px 14px;border:1px solid var(--line);background:var(--bg);color:var(--text)}
+#enviar{background:var(--green);color:var(--cream);width:100%}
+#enviar:hover{background:var(--green2)}
+footer{background:#10201a;color:var(--icing);text-align:center;padding:34px 20px calc(34px + env(safe-area-inset-bottom,0px));font-size:.9rem}
+footer b{display:block;font-family:var(--display);font-style:italic;font-size:1.9rem;color:var(--gold);font-weight:500}
+dialog{border:1px solid var(--gold-d);outline:1px solid var(--line);outline-offset:6px;background:var(--card);color:var(--text);padding:0;width:min(480px,calc(100% - 40px));max-height:calc(100% - 48px)}
+dialog::backdrop{background:rgba(16,32,26,.75)}
+.bb{padding:26px 26px 22px}
+.bb h3{font-size:2.1rem;font-style:italic;color:var(--head)}
+.bb .sub{color:var(--muted);font-size:.92rem;margin:6px 0 16px}
+.prog{height:6px;background:var(--line)}
+.prog i{display:block;height:100%;background:var(--gold-d);transition:width .2s}
+.cnt{font-size:.85rem;color:var(--muted);text-align:right;margin:4px 0 6px}
+.ch{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.ch small{color:var(--muted);margin-left:8px;font-size:.8rem}
+.qty button:disabled{opacity:.3;cursor:not-allowed}
+.plrow{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 0 0}
+.plrow small{display:block;color:var(--muted);font-size:.85rem}
+.lnk{background:none;border:0;color:var(--head);font:inherit;font-size:.9rem;text-decoration:underline;cursor:pointer;padding:4px 6px}
+.lnk:focus-visible,.pl:focus-visible{outline:2px solid var(--gold-d);outline-offset:2px}
+.back{padding-left:0;margin-bottom:6px}
+.pl{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:transparent;color:var(--text);border:1px solid var(--line);padding:10px 12px;margin-bottom:8px;cursor:pointer;font-family:var(--body)}
+.pl:hover,.pl.on{border-color:var(--gold-d);background:rgba(212,173,98,.14)}
+.plpic{width:46px;height:46px;flex:none;display:grid;place-items:center;background:var(--green);color:var(--gold)}
+.plpic svg{width:26px;height:26px}
+.plt{flex:1;display:flex;flex-direction:column;line-height:1.3}
+.plt small{color:var(--muted);font-size:.82rem}
+.plp{font-family:var(--display);font-weight:700;font-size:1.4rem}
+.bact{display:flex;gap:10px;margin-top:20px}
+.bact .btn{flex:1;text-align:center;padding:13px 12px}
+.bact .btn:disabled{opacity:.45;cursor:not-allowed}
+.bact .ghost{background:transparent;color:var(--text);border:1px solid var(--line);flex:.6}
+.tag.low{background:var(--red);color:#fff;border-color:var(--red)}
+.card .tag.low{background:var(--red);color:#fff;border-color:var(--red)}
+.band .card .tag.low{background:var(--red);color:#fff;border-color:var(--red)}
+.card.soldout .pic,.card.soldout h3{opacity:.5}
+.add:disabled{opacity:.45;cursor:not-allowed}
+.add:disabled:hover{background:transparent;color:var(--head)}
+.band .add:disabled:hover{background:transparent;color:var(--gold)}
+.pl:disabled{opacity:.5;cursor:not-allowed}
+.ch.off{opacity:.55}
+.lowm{color:#a82a24;font-weight:600}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .lowm{color:#f0a49e}}
+:root[data-theme="dark"] .lowm{color:#f0a49e}
+.warn{border:1px solid #a82a24;background:rgba(168,42,36,.12);padding:8px 12px;font-size:.88rem;margin:8px 0}
+.admbtn{position:fixed;left:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:20;background:var(--green);color:var(--gold);border:1px solid var(--gold);padding:9px 18px;font:500 .85rem var(--body);letter-spacing:.05em;cursor:pointer}
+.admbtn[hidden]{display:none}
+.lowrow{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:10px 0 0;font-size:.92rem}
+.lowrow input{width:64px;font:inherit;padding:6px 8px;border:1px solid var(--line);background:var(--bg);color:var(--text)}
+.ah{font-family:var(--display);font-style:italic;font-weight:700;font-size:1.45rem;color:var(--head);margin:18px 0 2px}
+.ai{display:grid;grid-template-columns:1fr 92px;gap:8px 12px;align-items:center;padding:7px 0;border-bottom:1px solid var(--line)}
+.ai input{font:inherit;padding:7px 8px;border:1px solid var(--line);background:var(--bg);color:var(--text);width:100%}
+.ai small{display:block;color:var(--muted);font-size:.78rem}
+.amsg{font-size:.88rem;color:var(--muted);margin-top:10px;min-height:1.3em}
+.pic.has-img{padding:0;overflow:hidden;background:var(--green)}
+.pic.has-img::after{display:none}
+.pic img{width:100%;height:100%;object-fit:cover;display:block}
+.pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.gal{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:34px;height:34px;border:1px solid var(--gold);background:rgba(30,58,42,.72);color:var(--gold);font-size:1.3rem;line-height:1;cursor:pointer}
+.gal.prev{left:8px}.gal.next{right:8px}
+.gal:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.dots{position:absolute;bottom:8px;left:0;right:0;display:flex;justify-content:center;gap:6px;z-index:2}
+.dots i{width:7px;height:7px;border-radius:50%;background:rgba(246,237,224,.55)}
+.dots i.on{background:var(--gold)}
+.plpic{overflow:hidden}.plpic img{width:100%;height:100%;object-fit:cover}
+.ph{padding:8px 0;border-bottom:1px solid var(--line)}
+.phn{font-size:.92rem;font-weight:500}
+.thumbs{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0}
+.th{position:relative;width:56px;height:56px}
+.th img{width:100%;height:100%;object-fit:cover;border:1px solid var(--line);cursor:pointer}
+.th:first-child img{outline:2px solid var(--gold)}
+.th button{position:absolute;top:-6px;right:-6px;width:20px;height:20px;border-radius:50%;border:0;background:var(--red);color:#fff;font-size:.7rem;line-height:1;cursor:pointer}
+.upl{font-size:.85rem;display:inline-block}
+@media (max-width:640px){nav,.heroin{padding-left:26px;padding-right:26px}.hero h1{font-size:clamp(2.7rem,10vw,4.2rem)}.ribbon{width:100%;right:-6%;font-size:1.75rem;height:58px}.hero{padding-bottom:92px}}
+@media (prefers-reduced-motion:reduce){.flakes svg{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-tree" viewBox="0 0 64 64"><path d="M32 6l-11 15h6L16 37h8L12 52h40L40 37h8L37 21h6z"/><path d="M32 52v7"/></symbol>
+  <symbol id="i-star" viewBox="0 0 64 64"><path d="M32 6l5.5 17.5L56 24 41 35l5.5 18L32 42.5 17.5 53 23 35 8 24l18.5-.5z"/></symbol>
+  <symbol id="i-snow" viewBox="0 0 64 64"><g id="arm"><path d="M32 32V5M32 13l-5-5M32 13l5-5M32 22l-6-6M32 22l6-6"/></g><use href="#arm" transform="rotate(60 32 32)"/><use href="#arm" transform="rotate(120 32 32)"/><use href="#arm" transform="rotate(180 32 32)"/><use href="#arm" transform="rotate(240 32 32)"/><use href="#arm" transform="rotate(300 32 32)"/></symbol>
+  <symbol id="i-ginger" viewBox="0 0 64 64"><polygon points="26,22 9,20 5,24 9,29 25,31 23,40 13,58 19,61 30,49 32,47 34,49 45,61 51,58 41,40 39,31 55,29 59,24 55,20 38,22" fill="#c98a4b" stroke="#c98a4b" stroke-width="6" stroke-linejoin="round"/><circle cx="32" cy="13" r="9" fill="#c98a4b" stroke="#c98a4b" stroke-width="3"/><g fill="#f6ede0" stroke="none"><circle cx="28.500" cy="12" r="1.500"/><circle cx="35.500" cy="12" r="1.500"/><circle cx="32" cy="30" r="2"/><circle cx="32" cy="37" r="2"/></g><g fill="none" stroke="#f6ede0" stroke-width="1.600" stroke-linecap="round"><path d="M28 16q4 3.500 8 0"/><path d="M12 22l2 8M52 22l-2 8M17 52l5 3M47 52l-5 3"/></g></symbol>
+  <symbol id="i-bow" viewBox="0 0 64 64"><path d="M32 34C24 18 8 16 8 28s16 12 24 6zM32 34c8-16 24-18 24-6s-16 12-24 6z"/><path d="M32 34l-8 22M32 34l8 22"/><circle cx="32" cy="34" r="4"/></symbol>
+  <symbol id="i-holly" viewBox="0 0 64 64"><path d="M32 30c-6-8-18-6-22 2 6 6 16 6 22-2zM32 30c6-8 18-6 22 2-6 6-16 6-22-2zM32 30c-2-8 0-16 8-22 4 8 2 18-8 22z"/><circle cx="29" cy="40" r="3"/><circle cx="36" cy="41" r="3"/><circle cx="32" cy="46" r="3"/></symbol>
+  <symbol id="i-orn" viewBox="0 0 64 64"><path d="M28 6h8M32 6v10"/><circle cx="32" cy="38" r="20"/><path d="M14 33c10 6 26 6 36 0"/></symbol>
+  <symbol id="i-gift" viewBox="0 0 64 64"><rect x="10" y="28" width="44" height="28"/><rect x="6" y="19" width="52" height="9"/><path d="M32 19v37M32 19c-6-11-17-8-14 0M32 19c6-11 17-8 14 0"/></symbol>
+</svg>
+
+<header class="hero">
+  <div class="flakes" id="flakes" aria-hidden="true"></div>
+  <nav>
+    <span class="logo">Evermore</span>
+    <a class="cartlink" href="#pedido">Mi pedido (<span id="count">0</span>)</a>
+  </nav>
+  <div class="heroin">
+    <h1>Christmas, in little things</h1>
+    <p></p>
+    <a class="btn" href="#peluches">Ver colección</a>
+  </div>
+  <div class="ribbon" aria-hidden="true"><svg viewBox="0 0 64 64"><use href="#i-star"/></svg>Felices fiestas<svg viewBox="0 0 64 64"><use href="#i-star"/></svg></div>
+</header>
+
+<main class="wrap">
+  <section id="peluches">
+    <div class="sec-head"><h2>Peluches navideños</h2><div class="orn"><svg class="i"><use href="#i-star"/></svg></div><p>Suaves, con gorrito y listos para quedarse junto al árbol.</p></div>
+    <div class="grid" id="g-peluches"></div>
+  </section>
+</main>
+
+<div class="band" id="bolos">
+  <div class="wrap">
+    <div class="sec-head"><h2>Bolos navideños</h2><div class="orn"><svg class="i"><use href="#i-holly"/></svg></div><p>Elige tus chocolates favoritos para armar tu bolo y súmale un peluche si quieres, o llévate una bota ya lista.</p></div>
+    <div class="grid" id="g-bolos"></div>
+  </div>
+</div>
+
+<main class="wrap">
+  <section id="combos">
+    <div class="grid" id="g-combos"></div>
+  </section>
+
+  <div class="cart" id="pedido">
+    <h2>Tu pedido</h2>
+    <div id="lines"><p class="empty">Aún no hay nada aquí. Agrega un peluche o un bolo.</p></div>
+    <div class="total"><span>Total</span><span id="total">$0</span></div>
+    <div class="fields">
+      <input id="nombre" placeholder="Tu nombre" autocomplete="name">
+      <input id="entrega" placeholder="Colonia o punto de entrega">
+    </div>
+    <button class="btn" id="enviar">Enviar pedido por WhatsApp</button>
+  </div>
+</main>
+
+<footer><b>Felices fiestas</b>Hecho con cariño · Pedidos hasta el 20 de diciembre</footer>
+
+<dialog id="builder" aria-labelledby="btitle"><div id="bbody"></div></dialog>
+<dialog id="admin" aria-labelledby="atitle"><div id="abody"></div></dialog>
+<button class="admbtn" id="admbtn" hidden>Inventario</button>
+<script type="application/json" id="inv-data">{"low":2,"stock":{},"imgs":{}}</script>
+
+<script>
+const PRISTINE = document.documentElement.cloneNode(true);
+// Cambia este número por tu WhatsApp (52 + 10 dígitos, sin espacios ni +)
+const WHATSAPP = "523339695369";
+
+// Fotos a mano: agrega img:["img/reno1.jpg","img/reno2.jpg"] a cualquier producto (la primera es la portada).
+const PRODUCTS = {
+  peluches: [
+    {id:"p1", s:"bow", n:"Pinguino", d:"Suave, tierno y perfecto para añadir ternura a cualquier colección. 18 cm ", p:100, t:"Favorito", img:["Pinguino.png"]}, 
+    {id:"p2", s:"star", n:"Candy Cranes", d:"Un adorable osito escondido entre los colores de la Navidad. 25 cm", p:110, img:["CandyCranes.png"]},
+    {id:"p3", s:"snow", n:"Christmas Friends", d:"diferentes personajes navideños, desde elfos y renos hasta Santa Claus y muñecos de nieve. 19 cm", p:75, img:["MunecoDeNieve.png", "Elfo.png", "Reno.png", "Santa.png", "Galleta.png"]},
+    {id:"p4", s:"holly", n:"Tacita", d:"Para abrazar toda la temporada. 22 cm.", p:200, img:["Chocolate.png", "Matcha.png"]},
+    {id:"p5", s:"orn", n:"Pino", d:"Toda la magia de un árbol de Navidad en versión abrazable. 18 cm ", p:110, img:["Pino.png"]},
+    {id:"p6", s:"tree", n:"Osito de navidad", d:"Un compañero suave y abrazable, listo para acompañarte toda la temporada. 25 cm", p:140, img:["Osito.png"]},
+    {id:"p7", s:"tree", n:"Galleta Jengibre", d:"Adorable galleta de jengibre de peluche. 19 cm.", p:120, img:["Jengibre.png"]}
+  ],
+  bolos: [
+    {id:"b1", s:"gift", n:"Bolo original", d:"Incluye todos menos dos tipos de chocolate. Puedes agregar extras.", p:150, t:"Arma el tuyo", build:{excludeChocs:["kinder","hersheyslux"]}},
+    {id:"b2", s:"orn", n:"Bolo especial", d:"Incluye todos menos un tipo de chocolate. Puedes agregar extras.", p:190, t:"Arma el tuyo", build:{excludeChocs:["hersheyslux"]}},
+    {id:"b3", s:"star", n:"Bolo posada", d:"Incluye 1 chocolate de cada tipo. Puedes agregar extras.", p:240, t:"Arma el tuyo", build:{excludeChocs:[]}},
+  ],
+  combos: []
+};
+
+const money = n => "$" + n.toLocaleString("es-MX");
+const cart = {};
+const all = Object.values(PRODUCTS).flat();
+const custom = {};
+const find = id => custom[id] || all.find(y=>y.id===id);
+const INV = (()=>{ try{ const d=JSON.parse(document.getElementById("inv-data").textContent); const l=Number(d.low); return {low:l>=0?l:2, stock:d.stock||{}, imgs:d.imgs||{}}; }catch(e){ return {low:2,stock:{},imgs:{}}; } })();
+const LOCAL = {};
+const imgsOf = x => (INV.imgs[x.id]&&INV.imgs[x.id].length) ? INV.imgs[x.id] : ((x.img&&x.img.length) ? x.img : (LOCAL[x.id]||[]));
+function picHTML(x){
+  const im = imgsOf(x);
+  if (!im.length) return `<div class="pic" aria-hidden="true" data-pid="${x.id}"><svg class="i"><use href="#i-${x.s}"/></svg></div>`;
+  const multi = im.length>1;
+  return `<div class="pic has-img" data-gal="${x.id}" data-pid="${x.id}" data-i="0"><img src="${im[0]}" alt="${x.n}" loading="lazy">${multi?`<button class="gal prev" data-gd="-1" aria-label="Foto anterior">‹</button><button class="gal next" data-gd="1" aria-label="Foto siguiente">›</button><span class="dots" aria-hidden="true">${im.map((_,i)=>`<i${i?"":' class="on"'}></i>`).join("")}</span>`:""}</div>`;
+}
+const tracked = k => Object.prototype.hasOwnProperty.call(INV.stock,k) && INV.stock[k]!==null && INV.stock[k]!=="";
+function usedIn(k){ let n=0; for (const id in cart){ const q=cart[id], c=custom[id]; if (c){ if (c.ch && c.ch[k]) n+=c.ch[k]*q; if (c.pl===k) n+=q; } else if (id===k) n+=q; } return n; }
+const avail = k => tracked(k) ? Number(INV.stock[k])-usedIn(k) : Infinity;
+const note = k => { if(!tracked(k)) return ""; const a=avail(k); if(a<=0) return "Agotado"; if(a<=INV.low) return a===1?"Queda 1":"Quedan "+a; return ""; };
+const stateOf = k => { if(!tracked(k)) return ""; const n=Number(INV.stock[k]); return n<=0?"Agotado":(n<=INV.low?(n===1?"Queda 1":"Quedan "+n):""); };
+function canMore(id){ const c=custom[id]; if(!c) return avail(id)>=1; for (const k in (c.ch||{})) if (avail(k)<c.ch[k]) return false; return !c.pl || avail(c.pl)>=1; }
+const CHOCS = [{id:"carlosv",n:"Carlos V"},{id:"mms",n:"M&M's"},{id:"turin",n:"Turín"},{id:"milkyway",n:"Milky Way"},{id:"hersheys",n:"Hershey's"},{id:"kinder",n:"Kinder Bueno"},{id:"kitkat",n:"KitKat"}, {id:"hersheyslux",n:"Hershey's Lux"}, {id:"snickers", n:"Snickers"}]; 
+// PRECIOS EDITABLES: cambia aquí cuánto cuesta agregar cada chocolate extra.
+// El precio base de cada bolo se modifica arriba, en PRODUCTS.bolos (propiedad p).
+const EXTRA_PRICES = {carlosv:12, mms:26, turin:16, milkyway:25, hersheys:23, kinder:35, kitkat:25, hersheyslux:45, snickers:25 };
+const BASE_CHOCS = 1; // Cada bolo incluye obligatoriamente 1 de cada chocolate que le corresponde.
+let B = null;
+const chocsFor = x => CHOCS.filter(c => !(x.build.excludeChocs || []).includes(c.id));
+const activeChocs = () => chocsFor(B.x);
+const bsum = () => Object.values(B.sel).reduce((a,b)=>a+b,0);
+const extraCount = () => activeChocs().reduce((sum,c)=>sum+Math.max(0,(B.sel[c.id]||0)-BASE_CHOCS),0);
+const extrasPrice = () => activeChocs().reduce((sum,c)=>sum+Math.max(0,(B.sel[c.id]||0)-BASE_CHOCS)*Number(EXTRA_PRICES[c.id]||0),0);
+const builderPrice = () => B.x.p+extrasPrice()+(B.plush?all.find(y=>y.id===B.plush).p:0);
+function openBuilder(id){
+  const x=all.find(y=>y.id===id);
+  B = {x, sel:Object.fromEntries(chocsFor(x).map(c=>[c.id,BASE_CHOCS])), plush:null, view:"main"};
+  drawB();
+  document.getElementById("builder").showModal();
+}
+function drawB(){
+  if (B.view==="plush"){ drawP(); return; }
+  const x=B.x, sel=B.sel, chocs=activeChocs(), extras=extraCount(), pl=B.plush?all.find(y=>y.id===B.plush):null;
+  const missing=chocs.filter(c=>avail(c.id)<BASE_CHOCS);
+  document.getElementById("bbody").innerHTML = `<div class="bb"><h3 id="btitle">Arma tu ${x.n.toLowerCase()}</h3>
+  <p class="sub">Incluye obligatoriamente 1 chocolate de cada tipo (${chocs.length} en total). Después puedes agregar todos los extras que quieras.</p><div class="prog"><i style="width:100%"></i></div>
+  <div class="cnt" aria-live="polite">${chocs.length} chocolates incluidos · ${extras} extra${extras===1?"":"s"}</div>${missing.length?`<p class="warn">No hay inventario suficiente para incluir: ${missing.map(c=>c.n).join(", ")}.</p>`:""}
+  ${chocs.map(c=>{const n=sel[c.id]||0, nt=note(c.id), extraPrice=Number(EXTRA_PRICES[c.id]||0); return `<div class="ch${avail(c.id)<=0?" off":""}"><span>${c.n}<small>Incluido: 1 · Extra: ${money(extraPrice)} c/u</small>${nt?`<small class="lowm">${nt}</small>`:""}</span><span class="qty"><button data-ch="${c.id}" data-d="-1" ${n>BASE_CHOCS?"":"disabled"} aria-label="Quitar extra de ${c.n}">−</button><b>${n}</b><button data-ch="${c.id}" data-d="1" ${avail(c.id)>n?"":"disabled"} aria-label="Agregar extra de ${c.n}">+</button></span></div>`}).join("")}
+  <div class="cnt">Extras: ${money(extrasPrice())}</div>
+  <div class="plrow"><div><b>Peluche</b><small>${pl?pl.n+" · "+money(pl.p):"Opcional: súmalo a tu bolo"}</small></div><span>${pl?'<button class="lnk" data-plx>Quitar</button>':""}<button class="lnk" data-plo>${pl?"Cambiar":"Elegir peluche"}</button></span></div>
+  <div class="bact"><button class="btn ghost" data-bx>Cancelar</button><button class="btn" data-bok ${missing.length?"disabled":""}>Agregar al pedido · ${money(builderPrice())}</button></div></div>`;
+}
+function drawP(){
+  const x=B.x;
+  document.getElementById("bbody").innerHTML = `<div class="bb"><button class="lnk back" data-pback>← Volver a mi bolo</button><h3 id="btitle">Elige tu peluche</h3>
+  <p class="sub">Su precio se suma al de tu ${x.n.toLowerCase()}.</p>
+  ${PRODUCTS.peluches.map(p=>{const nt=note(p.id), off=avail(p.id)<=0&&B.plush!==p.id; return `<button class="pl${B.plush===p.id?" on":""}" data-pl="${p.id}" ${off?"disabled":""}><span class="plpic">${imgsOf(p).length?`<img src="${imgsOf(p)[0]}" alt="">`:`<svg class="i"><use href="#i-${p.s}"/></svg>`}</span><span class="plt"><b>${p.n}</b><small>${p.d}</small>${nt?`<small class="lowm">${nt}</small>`:""}</span><span class="plp">${money(p.p)}</span></button>`}).join("")}
+  <div class="bact"><button class="btn ghost" data-pback>Volver</button></div></div>`;
+}
+document.getElementById("builder").addEventListener("click", e=>{
+  const pe = e.target.closest("[data-plo],[data-plx],[data-pback],[data-pl]");
+  if (pe){
+    if (pe.hasAttribute("data-plo")) B.view="plush";
+    else if (pe.hasAttribute("data-plx")) B.plush=null;
+    else if (pe.hasAttribute("data-pback")) B.view="main";
+    else { B.plush=pe.dataset.pl; B.view="main"; }
+    drawB();
+    const f = document.querySelector("#bbody button:not([disabled])"); if (f) f.focus();
+    return;
+  }
+  const b = e.target.closest("[data-ch]");
+  if (b && !b.disabled){
+    const id=b.dataset.ch, d=Number(b.dataset.d), n=(B.sel[id]||0)+d;
+    if (n<BASE_CHOCS || n>avail(id)) return;
+    B.sel[id]=n;
+    drawB();
+    const nb = document.querySelector('[data-ch="'+id+'"][data-d="'+d+'"]:not([disabled])') || document.querySelector('[data-ch="'+id+'"]:not([disabled])');
+    if (nb) nb.focus();
+    return;
+  }
+  if (e.target.closest("[data-bx]")){ e.currentTarget.close(); return; }
+  if (e.target.closest("[data-bok]") && activeChocs().every(k=>(B.sel[k.id]||0)>=BASE_CHOCS && avail(k.id)>=B.sel[k.id])){
+    const picked = activeChocs();
+    const comp = picked.map(k=>B.sel[k.id]+" "+k.n).join(", ");
+    const pl = B.plush ? all.find(y=>y.id===B.plush) : null;
+    const key = B.x.id+":"+picked.map(k=>k.id+B.sel[k.id]).join("-")+(pl?":"+pl.id:"");
+    custom[key] = {id:key, n:B.x.n, p:builderPrice(), c:comp+(pl?" + peluche "+pl.n:""), ch:Object.assign({},B.sel), pl:pl?pl.id:null};
+    cart[key] = (cart[key]||0)+1;
+    render();
+    e.currentTarget.close();
+  }
+});
+
+function card(x){
+  const sn = x.build ? "" : note(x.id), out = sn==="Agotado", low = sn && !out;
+  return `<article class="card${out?" soldout":""}">${picHTML(x)}
+  <div class="in">${x.t?`<span class="tag">${x.t}</span>`:""}${out?`<span class="tag low">Agotado</span>`:low?`<span class="tag low">¡${sn}!</span>`:""}<h3>${x.n}</h3><p>${x.d}</p>
+  <div class="row"><span class="price">${money(x.p)}</span>
+  ${x.build?`<button class="add" data-build="${x.id}" aria-label="Armar ${x.n}">Armar mi bolo</button>`:`<button class="add" data-id="${x.id}" aria-label="Agregar ${x.n}" ${out?"disabled":""}>${out?"Agotado":"Agregar"}</button>`}</div></div></article>`;
+}
+for (const k in PRODUCTS) document.getElementById("g-"+k).innerHTML = PRODUCTS[k].map(card).join("");
+
+/* ---- Fotos desde una carpeta (VS Code) ----
+   Guarda las fotos en una carpeta "img" junto a este archivo, con el código del producto:
+   img/p2-1.jpg, img/p2-2.jpg, img/p2-3.png ...  (1 = portada; si hay varias, salen con flechas)
+   Funciona al abrir el archivo directo o con Live Server. En tu propio hosting pon AUTO_FOTOS = true. */
+const AUTO_FOTOS = location.protocol==="file:" || /^(localhost|127\.|\[::1\])/.test(location.hostname);
+const FOTO_EXT = ["jpg","jpeg","png","webp","JPG","JPEG","PNG","WEBP"], FOTO_MAX = 8;
+const probe = url => new Promise(r=>{ const i=new Image(); i.onload=()=>r(url); i.onerror=()=>r(null); i.src=url; });
+async function findFotos(x){
+  const out=[];
+  for (let n=1;n<=FOTO_MAX;n++){
+    const hit=(await Promise.all(FOTO_EXT.map(e=>probe("img/"+x.id+"-"+n+"."+e)))).find(Boolean);
+    if (!hit) break;
+    out.push(hit);
+  }
+  return out;
+}
+if (AUTO_FOTOS) all.forEach(async x=>{
+  if ((INV.imgs[x.id]||[]).length || (x.img||[]).length) return;
+  const f = await findFotos(x);
+  if (f.length){ LOCAL[x.id]=f; const el=document.querySelector('[data-pid="'+x.id+'"]'); if (el) el.outerHTML=picHTML(x); }
+});
+
+document.addEventListener("click", e=>{
+  const g = e.target.closest("[data-gd]");
+  if (g){ const pic=g.closest("[data-gal]"), x=all.find(y=>y.id===pic.dataset.gal), im=imgsOf(x); const i=(Number(pic.dataset.i)+Number(g.dataset.gd)+im.length)%im.length; pic.dataset.i=i; pic.querySelector("img").src=im[i]; pic.querySelectorAll(".dots i").forEach((d,k)=>d.classList.toggle("on",k===i)); return; }
+  const bd = e.target.closest("[data-build]");
+  if (bd){ openBuilder(bd.dataset.build); return; }
+  const a = e.target.closest(".add");
+  if (a && a.dataset.id && !a.disabled){ const id=a.dataset.id; if (avail(id)<1){ a.textContent="Sin más piezas"; setTimeout(()=>a.textContent="Agregar",1200); } else { cart[id]=(cart[id]||0)+1; render(); a.textContent="Agregado"; setTimeout(()=>a.textContent="Agregar",900); } }
+  const q = e.target.closest("[data-q]");
+  if (q){ const id=q.dataset.id, d=Number(q.dataset.q); if (d>0 && !canMore(id)) return; cart[id]=(cart[id]||0)+d; if(cart[id]<=0) delete cart[id]; render(); }
+});
+
+function render(){
+  const ids = Object.keys(cart);
+  let total=0, count=0;
+  document.getElementById("lines").innerHTML = ids.length ? ids.map(id=>{
+    const x = find(id), n = cart[id]; total += x.p*n; count += n;
+    return `<div class="line"><span>${x.n}${x.c?`<small style="display:block;color:var(--muted)">${x.c}</small>`:""}</span><span class="qty">
+      <button data-id="${id}" data-q="-1" aria-label="Quitar uno">−</button><b>${n}</b>
+      <button data-id="${id}" data-q="1" ${canMore(id)?"":"disabled"} aria-label="Agregar uno">+</button>
+      <span style="min-width:64px;text-align:right">${money(x.p*n)}</span></span></div>`;
+  }).join("") : '<p class="empty">Aún no hay nada aquí. Agrega un peluche o un bolo.</p>';
+  document.getElementById("total").textContent = money(total);
+  document.getElementById("count").textContent = count;
+}
+
+document.getElementById("enviar").addEventListener("click", ()=>{
+  const ids = Object.keys(cart);
+  if(!ids.length){ alert("Agrega al menos un producto a tu pedido."); return; }
+  const nombre = document.getElementById("nombre").value.trim();
+  const entrega = document.getElementById("entrega").value.trim();
+  let total = 0;
+  const lista = ids.map(id=>{ const x=find(id); total+=x.p*cart[id]; return `• ${cart[id]} x ${x.n}${x.c?" ["+x.c+"]":""} (${money(x.p*cart[id])})`; }).join("\n");
+  const msg = `Hola, quiero hacer este pedido navideño:\n${lista}\n\nTotal: ${money(total)}\nNombre: ${nombre||"-"}\nEntrega: ${entrega||"-"}`;
+  window.open("https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(msg), "_blank", "noopener");
+});
+
+const fl = document.getElementById("flakes");
+for(let i=0;i<22;i++){
+  const z=14+Math.random()*18;
+  const s=document.createElementNS("http://www.w3.org/2000/svg","svg");
+  s.setAttribute("viewBox","0 0 64 64");
+  s.innerHTML='<use href="#i-snow"/>';
+  s.style.width=s.style.height=z+"px";
+  s.style.left=(Math.random()*100)+"%";
+  s.style.animationDuration=(8+Math.random()*10)+"s";
+  s.style.animationDelay=(-Math.random()*16)+"s";
+  fl.appendChild(s);
+}
+for(let i=0;i<7;i++){
+  const z=30+Math.random()*16;
+  const c=document.createElementNS("http://www.w3.org/2000/svg","svg");
+  c.setAttribute("viewBox","0 0 64 64");
+  c.setAttribute("class","ck");
+  c.innerHTML='<use href="#i-ginger"/>';
+  c.style.width=c.style.height=z+"px";
+  c.style.left=(4+Math.random()*92)+"%";
+  c.style.animationDuration=(11+Math.random()*8)+"s";
+  c.style.animationDelay=(-Math.random()*18)+"s";
+  fl.appendChild(c);
+}
+/* ---- Inventario y fotos (solo la dueña) ---- */
+const ALLP = [...PRODUCTS.peluches,...PRODUCTS.bolos,...PRODUCTS.combos];
+const AI = [
+  {h:"Peluches", items:PRODUCTS.peluches.map(p=>({k:p.id,n:p.n}))},
+  {h:"Bota y combos", items:[...PRODUCTS.bolos.filter(b=>!b.build),...PRODUCTS.combos].map(p=>({k:p.id,n:p.n}))},
+  {h:"Chocolates", items:CHOCS.map(c=>({k:c.id,n:c.n}))}
+];
+let A = null;
+function readA(){
+  document.querySelectorAll("#abody [data-ak]").forEach(i=>{ if (i.value==="") delete A.stock[i.dataset.ak]; else { const n=Math.max(0,Math.floor(Number(i.value))); if (!isNaN(n)) A.stock[i.dataset.ak]=n; } });
+  const l=document.getElementById("a-low"); if (l){ const v=Math.max(0,Math.floor(Number(l.value))); A.low=isNaN(v)?2:v; }
+}
+function drawA(msg){
+  const st = k => { const n=A.stock[k]; return n<=0?"Agotado":(n<=A.low?(n===1?"Queda 1":"Quedan "+n):""); };
+  document.getElementById("abody").innerHTML = `<div class="bb"><h3 id="atitle">Inventario y fotos</h3>
+  <p class="sub">Solo tú ves esto. En inventario, deja vacío lo que no quieras controlar: los clientes solo ven "Quedan N" cuando falta poco y "Agotado" en 0. Descuenta a mano lo que vendas y guarda.</p>
+  <div class="lowrow"><label for="a-low">Avisar cuando queden</label><input id="a-low" type="number" min="0" value="${A.low}"><span>o menos</span></div>
+  ${AI.map(g=>`<div class="ah">${g.h}</div>`+g.items.map(it=>`<div class="ai"><label for="a-${it.k}">${it.n}<small>${(it.k in A.stock)?"Cliente ve: "+(st(it.k)||"nada (hay suficiente)"):"Sin control"}</small></label><input id="a-${it.k}" data-ak="${it.k}" type="number" min="0" inputmode="numeric" value="${(it.k in A.stock)?A.stock[it.k]:""}" placeholder="—"></div>`).join("")).join("")}
+  <div class="ah">Fotos</div>
+  <p class="sub" style="margin:0 0 4px">Sube una o varias por producto (se achican solas). La primera es la portada; toca una miniatura para hacerla portada.</p>
+  ${ALLP.map(p=>`<div class="ph"><div class="phn">${p.n}</div><div class="thumbs">${(A.imgs[p.id]||[]).map((u,i)=>`<span class="th"><img src="${u}" alt="Foto ${i+1} de ${p.n}" data-cv="${p.id}:${i}"><button data-rm="${p.id}:${i}" aria-label="Quitar foto ${i+1} de ${p.n}">✕</button></span>`).join("")}</div><label class="lnk upl">Agregar fotos<input type="file" accept="image/*" multiple data-up="${p.id}" hidden></label></div>`).join("")}
+  <div class="amsg" id="amsg" aria-live="polite">${msg||""}</div>
+  <div class="bact"><button class="btn ghost" data-acl>Cerrar</button><button class="btn" data-asv>Guardar y publicar</button></div></div>`;
+}
+function shrink(file, max=900){
+  return new Promise((res,rej)=>{
+    const fr=new FileReader();
+    fr.onerror=()=>rej(new Error("read"));
+    fr.onload=()=>{ const im=new Image();
+      im.onerror=()=>rej(new Error("img"));
+      im.onload=()=>{ const k=Math.min(1,max/Math.max(im.width,im.height)); const c=document.createElement("canvas"); c.width=Math.max(1,Math.round(im.width*k)); c.height=Math.max(1,Math.round(im.height*k)); const x=c.getContext("2d"); x.fillStyle="#fff"; x.fillRect(0,0,c.width,c.height); x.drawImage(im,0,0,c.width,c.height); res(c.toDataURL("image/jpeg",0.82)); };
+      im.src=fr.result; };
+    fr.readAsDataURL(file);
+  });
+}
+document.getElementById("admbtn").addEventListener("click", ()=>{
+  A = {low:INV.low, stock:Object.assign({},INV.stock), imgs:JSON.parse(JSON.stringify(INV.imgs))};
+  drawA(); document.getElementById("admin").showModal();
+});
+document.getElementById("admin").addEventListener("change", async e=>{
+  const f = e.target.closest("[data-up]"); if (!f) return;
+  readA();
+  const id=f.dataset.up, files=[...f.files];
+  document.getElementById("amsg").textContent="Procesando fotos…";
+  for (const file of files){ try{ (A.imgs[id]=A.imgs[id]||[]).push(await shrink(file)); }catch(_){} }
+  drawA();
+});
+document.getElementById("admin").addEventListener("click", async e=>{
+  if (e.target.closest("[data-acl]")){ e.currentTarget.close(); return; }
+  const rm = e.target.closest("[data-rm]");
+  if (rm){ readA(); const [id,i]=rm.dataset.rm.split(":"); A.imgs[id].splice(Number(i),1); if (!A.imgs[id].length) delete A.imgs[id]; drawA(); return; }
+  const cv = e.target.closest("[data-cv]");
+  if (cv){ readA(); const [id,i]=cv.dataset.cv.split(":"); const [u]=A.imgs[id].splice(Number(i),1); A.imgs[id].unshift(u); drawA(); return; }
+  if (!e.target.closest("[data-asv]")) return;
+  readA();
+  const data = {low:A.low, stock:A.stock, imgs:A.imgs};
+  const msg = document.getElementById("amsg");
+  const text = JSON.stringify(data);
+  if (text.length>12e6){ msg.textContent="Las fotos pesan demasiado para la página. Quita algunas e intenta de nuevo."; return; }
+  let art = null;
+  try{ art = window.claude ? await claude.use("artifact") : null; }catch(_){}
+  if (!art){ msg.innerHTML = 'No pude publicar desde aquí (las fotos solo se guardan desde la página publicada). Inventario para pasárselo a Claude:<br><textarea readonly rows="3" style="width:100%;margin-top:6px">'+JSON.stringify({low:A.low,stock:A.stock})+'</textarea>'; return; }
+  msg.textContent = "Guardando…";
+  try{
+    const doc = PRISTINE.cloneNode(true);
+    doc.querySelectorAll("script[src],base").forEach(n=>n.remove());
+    doc.querySelector("#inv-data").textContent = text.replace(/</g,"\\u003c");
+    await art.publish("<!DOCTYPE html>\n"+doc.outerHTML);
+  }catch(err){
+    msg.textContent = (err && (err.code==="not_granted"||err.code==="not_writer")) ? "Solo la dueña de la página puede guardar." : "No se pudo guardar"+(err&&err.code?" ("+err.code+")":"")+". Intenta de nuevo.";
+  }
+});
+(async()=>{ try{ if(!window.claude) return; const u=await claude.use("user"); if (u && (u.isOwner()||u.canEdit())) document.getElementById("admbtn").hidden=false; }catch(_){} })();
+</script>
+</body>
+</html>
