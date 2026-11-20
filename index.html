@@ -352,8 +352,15 @@ document.getElementById("builder").addEventListener("click", e=>{
 function card(x){
   const sn = x.build ? "" : note(x.id), out = sn==="Agotado", low = sn && !out;
   return `<article class="card${out?" soldout":""}">${picHTML(x)}
-  <div class="in">${x.t?`<span class="tag">${x.t}</span>`:""}${out?`<span class="tag low">Agotado</span>`:low?`<span class="tag low">¡${sn}!</span>`:""}<h3>${x.n}</h3><p>${x.d}</p>
-  <div class="row"><span class="price">${money(x.p)}</span>
+  <div class="in">${x.t?`<span class="tag">${x.t}</span>`:""}${out?`<span class="tag low">Agotado</span>`:low?`<span class="tag low">¡${sn}!</span>`:""}<h3>${x.n}</h3>
+<p>${x.d}</p>
+
+${x.build ? `<small style="display:block; margin-top:6px; font-size:11px; color:#d8bd91;">
+  Peluche ilustrativo; no incluido en el precio.
+</small>` : ""}
+
+<div class="row">
+  <span class="price">${x.build ? "Desde " : ""}${money(x.p)}</span>
   ${x.build?`<button class="add" data-build="${x.id}" aria-label="Armar ${x.n}">Armar mi bolo</button>`:`<button class="add" data-id="${x.id}" aria-label="Agregar ${x.n}" ${out?"disabled":""}>${out?"Agotado":"Agregar"}</button>`}</div></div></article>`;
 }
 for (const k in PRODUCTS) document.getElementById("g-"+k).innerHTML = PRODUCTS[k].map(card).join("");
